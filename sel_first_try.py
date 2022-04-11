@@ -1,10 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-DRIVER_PATH = '/Users/jankaiser/PycharmProjects/selenium_playground/chromedriver'
+#Den Chromedriver Pfad braucht man
+#DRIVER_PATH = '/Users/jankaiser/PycharmProjects/selenium_playground/chromedriver'
+#SAfari Driver macht es einfacher
 driver = webdriver.Safari()
+#hier die URL eingeben
 driver.get('http://jankaiser.me')
 
-h1 = driver.find_elements(By.TAG_NAME, "li")
-for hit in h1:
+#Schleife mit den Suchresultaten laufen lassen
+listelements = driver.find_elements(By.TAG_NAME, "ul")
+for hit in listelements:
     print(hit.text)
